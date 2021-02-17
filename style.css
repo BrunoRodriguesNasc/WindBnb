@@ -1,0 +1,276 @@
+@font-face{
+  font-family:Montserrat,sans-serif;
+  src: url(/font/Montserrat-Black.ttf);
+}
+
+*{
+  font-family:Montserrat,sans-serif;
+  box-sizing: border-box;
+  outline: none;
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: inherit;
+}
+
+/*Primeira Filtro */
+.filtro-ativo{
+  border-radius: 0;
+  width: 100%;
+  background-color: white;
+  box-shadow:  0 0px 6px rgb(46 44 44 / 10);
+  position: fixed;
+  z-index: 2;
+  left: 0;
+  top: -50vh;
+  padding: 3%;
+  height: 45vh;
+  transition: 0.6s ease;
+}
+
+header{
+  margin: 2% 3%;
+  display: flex;
+  justify-content: space-between;
+}
+
+.filter{
+  display: flex;
+  align-items: center;
+  width: 19%;
+  border-radius: 16px;
+  font-size: 14px;
+  background-color: #fff;
+}
+
+header .filter div{
+  padding: 5% 0;
+  display: flex;
+  justify-content: center;
+  cursor: pointer;
+}
+
+.local {
+  width: 45%;
+  border-radius: 16px 0 0 16px;
+  box-shadow: 0 0px 6px rgb(46 44 44 / 10);
+  color: #bdbdbd;
+}
+
+.guest{
+  width: 40%;
+  box-shadow: 0 0px 6px 0px rgb(46 44 44 / 10);
+  color: #bdbdbd;
+}
+
+.btn{
+  height: 100%;
+  background-color: transparent;
+  width: 20%;
+  border: none;
+  box-shadow: 0 0px 6px  0px rgb(46 44 44 / 10);
+  border-radius: 0 16px 16px 0;
+  background-image: url(/img/search-24px.svg);
+  background-repeat: no-repeat; 
+  background-position: center; 
+  cursor: pointer;
+} 
+
+.btn:hover{
+  background-color:rgba(22, 3, 3, 0.014);
+  transition: 0.4s linear;
+  cursor: pointer;
+}
+
+/*Filtro Escondido */
+form{
+  display:flex;
+  justify-content: space-evenly;
+  height: 40px;
+}
+
+.input-ativo{
+  width: 33%;
+  display: flex;
+  border-radius: 16px 0 0 16px;
+  box-shadow: 0 1px 6px rgb(46 44 44 / 10);
+}
+
+.input-ativo-center{
+  display: flex;
+  width: 33%;
+  box-shadow: 0 1px 6px rgb(46 44 44 / 10);
+}
+
+.input-btn{
+  display: flex;
+  justify-content: center;
+  width: 33%;
+  border-radius: 0 16px 16px 0;
+  box-shadow: 0 1px 6px rgb(46 44 44 / 10);
+  cursor: pointer;
+}
+
+label{
+  position: fixed;
+  padding-left: 20px;
+  color: #bdbdbd;
+}
+
+.Local-Input{
+  width: 100%;
+  border: none;
+  outline: none;
+  padding-left: 10px;
+  padding-top: 3%;
+}
+
+.guest-Input{
+  width: 100%;
+  border: none;
+  outline: none;
+  padding-left: 10px;
+  padding-top: 3%;
+}
+
+.btn-input{
+  width: 19%;
+  border-radius: 16px;
+  border: none;
+  background: #eb5757;
+  color:white;
+  cursor: pointer;
+}
+
+.opcoes{
+  display: flex;
+  height: 60%;   
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 100%;
+}
+
+.opcoes-lugares.active{
+  display: block ;
+}
+
+.opcoes-lugares{
+  display: none;
+  padding: 2% 1.5%;
+  width: 33%;
+}
+
+.opcao-local{
+  padding: 3%;
+  cursor: pointer;
+  background-image: url(/img/location_on-24px.svg);
+  background-position: left;
+  background-repeat: no-repeat;
+  padding-inline-start: 25px;
+}
+
+.opcao-local:hover{
+  background-color: rgba(97, 81, 81, 0.12);
+}
+
+.tipo-guest{
+ margin: 10px;  
+}
+
+.opcoes-guest{
+  display:none;
+  width: 33%;
+}
+.opcoes-guest.active{
+  display:block;
+  margin-left:33%;
+}
+
+.btn-guest{
+  display: flex;
+  align-items: center;
+}
+
+.btn-btn-guest{
+  background-color: transparent;
+  border: 1px solid #828282;
+  border-radius: 4px;
+  width: 23px;
+  height: 23px;
+  cursor: pointer;
+  margin: 10px;
+}
+
+.btn-input:active{
+  background-color: red;
+  outline: none;
+}
+
+/*Informações das hospedagens */
+.hospedagem{
+  padding: 3%;
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+}
+
+.info{
+  display: flex;
+  justify-content: space-between;
+  font-size: 30px;
+  margin: 50px;
+}
+
+.container-lugares{
+  display: block;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  margin-top: 2%;
+}
+
+.detalhes{
+  height: 30%;
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+}
+
+.info-lugares{
+  margin-bottom: 3%;
+}
+
+.img-photo{
+  height: 40vh;
+  width: 50vh;
+  overflow: hidden;
+  border-radius: 24px;
+  margin-bottom: 5%;
+}
+
+.img-lugares{
+  width: 100%;
+  height: 86%;
+}
+
+.rating{
+  height: 28px;
+  width: 67px;
+  background-image: url(/img/star_rate-24px.svg);
+  background-repeat: no-repeat;
+  background-position: initial;
+  text-align: end;
+  font-size: x-large;
+}
+
+.nameLocal{
+  color: #333;
+  font-size: 16px;
+  font-weight: 600;
+}
+
+.superHost{
+  border: 2px solid black;
+  font-weight: bold;
+  border-radius: 10px;
+}

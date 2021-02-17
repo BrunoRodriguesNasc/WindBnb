@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="shortcut icon" href="/img/triangleLogo.png" type="image/x-icon">
+  <link rel="stylesheet" href="/style.css">
+  <title>WindBnb</title>
+</head>
+
+<body>
+  <div class="app-todo">
+    <div class="app">
+      <header>
+        <img class="logo" src="/img/logo.png" alt="logo">
+        <div class="filter">
+          <div class="local">Locations</div>
+          <div class="guest">Guest</div>
+          <button class="btn"></button>
+        </div>
+      </header>
+      <div class="filtro-ativo">
+        <form>
+          <div class="input-ativo">
+            <input class="Local-Input" id="local-Input" type="text">
+            <label for="local-Input">Locations</label>
+          </div>
+          <div class="input-ativo-center">
+            <input class="guest-Input" id="guest-Input" type="text">
+            <label for="guest-Input">Guest</label>
+          </div>
+          <div class="input-btn">
+            <button class="btn-input" onclick="search()">Search</button>
+          </div>
+        </form>
+        <div class="opcoes">
+          <div class="opcoes-lugares">
+            <div class="opcao-local">Helsinki,Finland</div>
+            <div class="opcao-local">Turku,Finland</div>
+            <div class="opcao-local">Oulu,Finland</div>
+            <div class="opcao-local">Vaasa,Finland</div>
+          </div>
+          <div class="opcoes-guest">
+            <div class="opcao-guest">
+              <div class="tipo-guest">
+                <p>Adults</p>
+                <span>ages 2 - 12</span>
+                <div class="btn-guest">
+                  <button class="btn-btn-guest" onclick="addOrSub('+')">+</button>
+                  <p class="number-Adults">0</p>
+                  <button class="btn-btn-guest" onclick="addOrSub('-')">-</button>
+                </div>
+              </div>
+            </div>
+            <div class="opcao-guest">
+              <div class="tipo-guest">
+                <p>Childrens</p>
+                <span>ages 2 - 12</span>
+                <div class="btn-guest">
+                  <button class="btn-btn-guest" onclick="addOrSubChildren('+')">+</button>
+                  <p class="number-Children">0</p>
+                  <button class="btn-btn-guest" onclick="addOrSubChildren('-')">-</button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="info">
+      </div>
+      <div class="hospedagem">
+      </div>
+    </div>
+    <script src="/main.js"></script>
+</body>
+
+</html>
