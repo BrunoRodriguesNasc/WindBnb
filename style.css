@@ -46,7 +46,6 @@ header{
   font-size: 14px;
   background-color: #fff;
   box-shadow: 0px 1px 6px rgba(0, 0, 0, 0.1);
-  border-radius: 16px;
 }
 
 header .filter div{
@@ -92,6 +91,7 @@ form{
   display:flex;
   justify-content: space-evenly;
   height: 55px;
+  min-height:  40px;
 }
 
 .input-ativo{
@@ -216,7 +216,7 @@ label{
 }
 
 .opcoes-guest{
-  display:none;
+  display:none !important;
   width: 33%;
   font-family: Mulish,sans-serif;
 }
@@ -235,8 +235,7 @@ label{
   background-color: transparent;
   border: 1px solid #828282;
   border-radius: 4px;
-  width: 23px;
-  height: 23px;
+  width: 8%;
   cursor: pointer;
   margin: 10px;
 }
@@ -303,7 +302,7 @@ label{
 
 .img-photo{
   height: 40vh;
-  width: 381px;
+  width: 60vh;
   overflow: hidden;
   border-radius: 24px;
   margin-bottom: 5%;
