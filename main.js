@@ -170,10 +170,11 @@ const opcao = document.querySelectorAll(".opcao-local");
 const btnInput = document.querySelector(".btn-input");
 const hospedagem = document.querySelector(".hospedagem");
 const Cont = document.querySelector(".info");
-const btnAdults = document.querySelector(".btn-btn-guest")
-const numberAdults = document.querySelector(".number-Adults");
+const btnGuest = document.querySelectorAll(".btn-btn-guest")
+var numberAdults = document.querySelector(".number-Adults");
 const numberChildren = document.querySelector(".number-Children")
 const divLugares = document.querySelector(".container-lugares")
+var values = "";
 
 
 filter.addEventListener('click', () => {
@@ -186,62 +187,61 @@ inputLocal.addEventListener('click', () => {
   opcoesGuest.classList.remove("active")
 })
 
+//Adcionando as colunas de Hospedes
 inputGuest.addEventListener('click', () => {
   opcoesGuest.classList.toggle("active")
   opcoesLocal.classList.remove("active")
 })
 
+
+//Selecionando o lugar e Adcionando ao value Para introduzir depois no Filtro
 opcao.forEach(o => {
   o.addEventListener('click', (e) => {
-    inputLocal.value = o.textContent.replace(",Finland", "").toLowerCase();
+    local.value = o.textContent;
+    values = o.textContent.replace(",Finland", "").toLowerCase();
+    inputLocal.value = o.textContent;
     opcoesLocal.classList.remove("active")
-    e.preventDefault();
-    local.textContent = o.textContent;
+    e.stopPropagation();
   })
 })
 
-
-var totalGuest = 0;
-var totalAdults = 0;
-var totalChildren = 0;
-
-function addOrSub(value) {
-
-  if (value === "+" && numberAdults.textContent < 12) {
-    totalAdults = numberAdults.innerHTML++;
-    totalGuest++;
+var total = 0;
+//Função para calcular o numero de Hospedes
+function addOrSub(value, guest, adults = 1, children = 1,) {
+  if (value === "+" && guest === "Adults") {
+    adults = numberAdults.innerHTML++;
+    total++
 
 
-  } else if (value === '-' && numberAdults.textContent > 0) {
-    totalAdults = numberAdults.textContent--;
-    totalGuest--;
+  } else if (value === '-' && guest === "Adults") {
+    adults = numberAdults.innerHTML--;
+    total--;
+  }
+  if (value === "+" && guest === "Children") {
+    children = numberChildren.innerHTML++;
+    total++
 
   }
+  else if (value === '-' && guest === "Children") {
+    children = numberChildren.innerHTML--;
+    total--;
 
-  inputGuest.value = "Guest " + totalGuest;
-}
-
-function addOrSubChildren(value) {
-
-  if (value === "+" && numberChildren.textContent < 12) {
-    totalChildren = numberChildren.innerHTML++;
-    totalGuest++;
-
-  } else if (value === '-' && numberChildren.textContent > 0) {
-    totalChildren = numberChildren.textContent--;
-    totalGuest--;
   }
-  inputGuest.value = "Guest " + totalGuest;
+  inputGuest.value = "Guests " + total;
+  return total;
 }
+
+
+//Função para procurar as hospedagens
 
 function search() {
-  if(hospedagem && Cont){
-    hospedagem.innerHTML ="";
+  if (hospedagem && Cont) {
+    hospedagem.innerHTML = "";
     Cont.innerHTML = "";
   }
-  var j = 0;
+  let j = 0;
   for (let i = 0; i < json.length; i++) {
-    if (inputLocal.value === json[i].city.toLowerCase() && totalGuest <= json[i].maxGuests) {
+    if (values === json[i].city.toLowerCase() && addOrSub() <= json[i].maxGuests) {
       imgQuarto = json[i].photo;
       titleLocation = json[i].title
       ratingLocation = json[i].rating;
@@ -276,7 +276,7 @@ function search() {
     </div>
         `
       j++
-    } else if (!inputLocal.value &&  totalGuest <= json[i].maxGuests) {
+    } else if (!values && addOrSub() <= json[i].maxGuests) {
       imgQuarto = json[i].photo;
       titleLocation = json[i].title
       ratingLocation = json[i].rating;
@@ -284,7 +284,7 @@ function search() {
       superHostLocation = json[i].superHost;
 
       if (superHostLocation) {
-        superHostString = `<span class = "superHost">Super Host</span>`;
+        superHostString = `<span class = "superHost">SUPER HOST</span>`;
       } else {
         superHostString = "";
       }
@@ -303,20 +303,25 @@ function search() {
             </span>
           </div>
           <div class="rating">
-            <span>${ratingLocation}</span>
+            <span>${ratingLocation}
+           
+            </span>
           </div>
         </div>
         <p class="nameLocal">${titleLocation}</p>
       </div> 
     </div>
+   
         `
       j++
 
     }
   }
-  guest.textContent = "Guest " + totalGuest;
+  if (addOrSub() > 0) {
+    guest.value = "Guests " + addOrSub();
+  }
   event.preventDefault();
-  Cont.innerHTML += ` <h1>Stays in Finland</h1> <h2>stays + ${j}</h2>`;
+  Cont.innerHTML += `<h1>Stays in Finland</h1> <h2>${j}+stays</h2>`;
   filtro.style.top = "-50vh"
 }
 

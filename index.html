@@ -14,21 +14,21 @@
   <div class="app-todo">
     <div class="app">
       <header>
-        <img class="logo" src="/img/logo.png" alt="logo">
+        <img class="logo" src="/img/logo.svg" alt="logo">
         <div class="filter">
-          <div class="local">Locations</div>
-          <div class="guest">Guest</div>
+          <input class="local" placeholder="Add locations">
+          <input class="guest" placeholder="Add guests">
           <button class="btn"></button>
         </div>
       </header>
       <div class="filtro-ativo">
         <form>
           <div class="input-ativo">
-            <input class="Local-Input" id="local-Input" type="text">
+            <input class="Local-Input" id="local-Input" placeholder="Add locations" type="text">
             <label for="local-Input">Locations</label>
           </div>
           <div class="input-ativo-center">
-            <input class="guest-Input" id="guest-Input" type="text">
+            <input class="guest-Input" id="guest-Input" placeholder="Add guests"type="text">
             <label for="guest-Input">Guest</label>
           </div>
           <div class="input-btn">
@@ -37,31 +37,31 @@
         </form>
         <div class="opcoes">
           <div class="opcoes-lugares">
-            <div class="opcao-local">Helsinki,Finland</div>
-            <div class="opcao-local">Turku,Finland</div>
-            <div class="opcao-local">Oulu,Finland</div>
-            <div class="opcao-local">Vaasa,Finland</div>
+            <div class="opcao-local" value="Helsinki,Finland">Helsinki,Finland</div>
+            <div class="opcao-local" value="Turku,Finland">Turku,Finland</div>
+            <div class="opcao-local" value="Oulu,Finland">Oulu,Finland</div>
+            <div class="opcao-local" value="Vaasa,Finland">Vaasa,Finland</div>
           </div>
           <div class="opcoes-guest">
             <div class="opcao-guest">
               <div class="tipo-guest">
                 <p>Adults</p>
-                <span>ages 2 - 12</span>
+                <span class="span-age">Ages 13 or above</span>
                 <div class="btn-guest">
-                  <button class="btn-btn-guest" onclick="addOrSub('+')">+</button>
+                  <button class="btn-btn-guest" onclick="addOrSub('+','Adults')">+</button>
                   <p class="number-Adults">0</p>
-                  <button class="btn-btn-guest" onclick="addOrSub('-')">-</button>
+                  <button class="btn-btn-guest" onclick="addOrSub('-','Adults')">-</button>
                 </div>
               </div>
             </div>
             <div class="opcao-guest">
               <div class="tipo-guest">
-                <p>Childrens</p>
-                <span>ages 2 - 12</span>
+                <p>Children</p>
+                <span class="span-age"> Ages 2-12</span>
                 <div class="btn-guest">
-                  <button class="btn-btn-guest" onclick="addOrSubChildren('+')">+</button>
-                  <p class="number-Children">0</p>
-                  <button class="btn-btn-guest" onclick="addOrSubChildren('-')">-</button>
+                  <button class="btn-btn-guest"onclick="addOrSub('+','Children')" >+</button>
+                  <p class="number-Children" value="0">0</p>
+                  <button class="btn-btn-guest"onclick="addOrSub('-','Children')"  >-</button>
                 </div>
               </div>
             </div>
@@ -74,6 +74,7 @@
       </div>
     </div>
     <script src="/main.js"></script>
+   
 </body>
 
 </html>

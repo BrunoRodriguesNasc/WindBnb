@@ -3,8 +3,12 @@
   src: url(/font/Montserrat-Black.ttf);
 }
 
+@font-face{
+  font-family: Mulish,sans-serif;
+  src: url(/font/Mulish-Light.ttf);
+}
+
 *{
-  font-family:Montserrat,sans-serif;
   box-sizing: border-box;
   outline: none;
   margin: 0;
@@ -18,7 +22,6 @@
   border-radius: 0;
   width: 100%;
   background-color: white;
-  box-shadow:  0 0px 6px rgb(46 44 44 / 10);
   position: fixed;
   z-index: 2;
   left: 0;
@@ -35,12 +38,15 @@ header{
 }
 
 .filter{
+  height: 55px;
   display: flex;
   align-items: center;
-  width: 19%;
+  width: 22%;
   border-radius: 16px;
   font-size: 14px;
   background-color: #fff;
+  box-shadow: 0px 1px 6px rgba(0, 0, 0, 0.1);
+  border-radius: 16px;
 }
 
 header .filter div{
@@ -50,17 +56,17 @@ header .filter div{
   cursor: pointer;
 }
 
-.local {
+.local{
   width: 45%;
   border-radius: 16px 0 0 16px;
-  box-shadow: 0 0px 6px rgb(46 44 44 / 10);
-  color: #bdbdbd;
+  color: #333;
+  border-right: 1px solid #F2F2;
+  padding: 10px;
 }
 
 .guest{
   width: 40%;
-  box-shadow: 0 0px 6px 0px rgb(46 44 44 / 10);
-  color: #bdbdbd;
+  color: #333;
 }
 
 .btn{
@@ -68,9 +74,8 @@ header .filter div{
   background-color: transparent;
   width: 20%;
   border: none;
-  box-shadow: 0 0px 6px  0px rgb(46 44 44 / 10);
   border-radius: 0 16px 16px 0;
-  background-image: url(/img/search-24px.svg);
+  background-image: url(/img/magnifying-glass.png);
   background-repeat: no-repeat; 
   background-position: center; 
   cursor: pointer;
@@ -86,20 +91,20 @@ header .filter div{
 form{
   display:flex;
   justify-content: space-evenly;
-  height: 40px;
+  height: 55px;
 }
 
 .input-ativo{
   width: 33%;
   display: flex;
   border-radius: 16px 0 0 16px;
-  box-shadow: 0 1px 6px rgb(46 44 44 / 10);
+  box-shadow: 0px 1px 6px rgba(0, 0, 0, 0.1);
 }
 
 .input-ativo-center{
   display: flex;
   width: 33%;
-  box-shadow: 0 1px 6px rgb(46 44 44 / 10);
+  box-shadow: 0px 1px 6px rgba(0, 0, 0, 0.1);
 }
 
 .input-btn{
@@ -107,39 +112,65 @@ form{
   justify-content: center;
   width: 33%;
   border-radius: 0 16px 16px 0;
-  box-shadow: 0 1px 6px rgb(46 44 44 / 10);
+  box-shadow: 0px 1px 6px rgba(0, 0, 0, 0.1);
   cursor: pointer;
 }
 
 label{
   position: fixed;
   padding-left: 20px;
-  color: #bdbdbd;
+  color: #333333;
+  font-family: Mulish,sans-serif;
+}
+
+.span-age{
+  color:#BDBDBD;
 }
 
 .Local-Input{
   width: 100%;
-  border: none;
   outline: none;
-  padding-left: 10px;
-  padding-top: 3%;
+  padding-left: 21px;
+  padding-top: 4%;
+  font-family: Mulish,sans-serif;
+}
+
+::-webkit-input-placeholder {
+  color: #BDBDBD;
+}
+
+.Local-Input:focus,.guest-Input:focus{
+  border: 1px solid #333;
+  border-radius: 16px;
 }
 
 .guest-Input{
+  padding-left: 18px;
   width: 100%;
   border: none;
   outline: none;
-  padding-left: 10px;
-  padding-top: 3%;
+  font-family: Mulish,sans-serif;
+  padding-top: 12px;
+  color: #BDBDBD;
 }
 
 .btn-input{
-  width: 19%;
+  width: 127px;
+  background: #EB5757;
+  box-shadow: 0px 1px 6px rgba(0, 0, 0, 0.1);
   border-radius: 16px;
-  border: none;
-  background: #eb5757;
-  color:white;
-  cursor: pointer;
+  color: #F2F2F2;
+  background-image:url(/img/magnifying-glassWhite.png);
+  background-repeat: no-repeat;
+  background-position:10px ;
+  font-family: Mulish;
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: 18px;
+  letter-spacing: 0em;
+  text-align: center;
+
 }
 
 .opcoes{
@@ -151,14 +182,18 @@ label{
   font-size: 100%;
 }
 
-.opcoes-lugares.active{
-  display: block ;
-}
-
 .opcoes-lugares{
   display: none;
   padding: 2% 1.5%;
   width: 33%;
+  font-family: Mulish,sans-serif ;
+  color: #4F4F4F;
+  transition: 0.6s ease;
+}
+
+.opcoes-lugares.active{
+  display: block ;
+  transition: 0.6s ease;
 }
 
 .opcao-local{
@@ -168,6 +203,7 @@ label{
   background-position: left;
   background-repeat: no-repeat;
   padding-inline-start: 25px;
+  margin-bottom: 10px
 }
 
 .opcao-local:hover{
@@ -176,11 +212,13 @@ label{
 
 .tipo-guest{
  margin: 10px;  
+ padding: 20px;
 }
 
 .opcoes-guest{
   display:none;
   width: 33%;
+  font-family: Mulish,sans-serif;
 }
 .opcoes-guest.active{
   display:block;
@@ -190,6 +228,7 @@ label{
 .btn-guest{
   display: flex;
   align-items: center;
+  margin-left: -10px;
 }
 
 .btn-btn-guest{
@@ -202,6 +241,7 @@ label{
   margin: 10px;
 }
 
+
 .btn-input:active{
   background-color: red;
   outline: none;
@@ -209,7 +249,8 @@ label{
 
 /*Informações das hospedagens */
 .hospedagem{
-  padding: 3%;
+  margin-left: 3%;
+  margin-right: 3%;
   display: flex;
   justify-content: space-between;
   flex-wrap: wrap;
@@ -218,8 +259,25 @@ label{
 .info{
   display: flex;
   justify-content: space-between;
-  font-size: 30px;
-  margin: 50px;
+  font-family: Montserrat;
+  font-style: normal;
+  font-weight: bold;
+  font-size: 24px;
+  line-height: 29px;
+}
+
+.info h1{
+  margin-left: 3%;
+  color: #4F4F4F;
+}
+
+.info h2{
+  margin-right: 3%;
+  font-style: normal;
+  font-weight: 500;
+  font-size: 18px;
+  line-height: 17px;
+  color: #4F4F4F;
 }
 
 .container-lugares{
@@ -230,19 +288,22 @@ label{
 }
 
 .detalhes{
+  font-family: Montserrat;
+  margin-bottom: 10px;
   height: 30%;
   display: flex;
   justify-content: space-between;
   flex-wrap: wrap;
+  color: #828282;
 }
 
 .info-lugares{
-  margin-bottom: 3%;
+  margin-bottom: 10%;
 }
 
 .img-photo{
   height: 40vh;
-  width: 50vh;
+  width: 531px;
   overflow: hidden;
   border-radius: 24px;
   margin-bottom: 5%;
@@ -255,22 +316,33 @@ label{
 
 .rating{
   height: 28px;
-  width: 67px;
-  background-image: url(/img/star_rate-24px.svg);
+  color: #4F4F4F !important;
+  width: 82px;
+  background-image: url(/img/star.png);
   background-repeat: no-repeat;
-  background-position: initial;
-  text-align: end;
+  background-position: 16px 0px;
   font-size: x-large;
+  text-align: right;
 }
 
 .nameLocal{
-  color: #333;
-  font-size: 16px;
+  font-family: Montserrat;
+  font-size: 21px;
+  font-style: normal;
   font-weight: 600;
+  line-height: 20px;
+  color:#333;
 }
 
 .superHost{
-  border: 2px solid black;
+  padding: 5px;
+  font-family: Montserrat;
+  font-style: normal;
   font-weight: bold;
-  border-radius: 10px;
+  border: 1px solid #4F4F4F;
+  box-sizing: border-box;
+  border-radius: 12px;
+  color: #4F4F4F;
+  text-transform: uppercase;
+
 }
