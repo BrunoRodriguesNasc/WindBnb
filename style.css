@@ -37,7 +37,7 @@ header{
   justify-content: space-between;
 }
 
-.filter{
+.filtro{
   height: 55px;
   display: flex;
   align-items: center;
@@ -346,10 +346,26 @@ label{
 }
 
 @media (max-width: 800px){
- .filter{
+ .filtro{
    width: 80%;
+   font-size: 10px;
  }
+
+ .filtro-ativo{
+   font-size: 10px;
+ }
+
  .img-photo{
    width: 53vh;
  }
+
+ .btn-btn-guest{
+   width: 50px;
+ }
+
+ .tipo-guest{
+  padding: 10px;
+  width: 99px;
+ }
+
 }
