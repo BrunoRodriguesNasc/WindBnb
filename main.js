@@ -174,7 +174,7 @@ const btnGuest = document.querySelectorAll(".btn-btn-guest")
 var numberAdults = document.querySelector(".number-Adults");
 const numberChildren = document.querySelector(".number-Children")
 const divLugares = document.querySelector(".container-lugares")
-var values = "";
+let values = "";
 
 
 filter.addEventListener('click', () => {
@@ -195,40 +195,42 @@ inputGuest.addEventListener('click', () => {
 
 
 //Selecionando o lugar e Adcionando ao value Para introduzir depois no Filtro
-opcao.forEach(o => {
-  o.addEventListener('click', (e) => {
+const opcaoPlace = opcao.forEach(o => {
+  o.addEventListener('click', () => {
     local.value = o.textContent;
-    values = o.textContent.replace(",Finland", "").toLowerCase();
     inputLocal.value = o.textContent;
     opcoesLocal.classList.remove("active")
-    e.stopPropagation();
+    values = o.textContent.replace(",Finland", "").toLowerCase();
   })
 })
 
-var total = 0;
 //Função para calcular o numero de Hospedes
-function addOrSub(value, guest, adults = 1, children = 1,) {
-  if (value === "+" && guest === "Adults") {
-    adults = numberAdults.innerHTML++;
-    total++
+function addOrSub(value, guest, adults = numberAdults, children = numberChildren, total = 0) {
 
+  if (value === "+" && guest === "Adults") {
+    adults.innerHTML++;
 
   } else if (value === '-' && guest === "Adults") {
-    adults = numberAdults.innerHTML--;
-    total--;
+    adults.innerHTML--;
   }
+
   if (value === "+" && guest === "Children") {
-    children = numberChildren.innerHTML++;
-    total++
-
+    children.innerHTML++;
   }
+
   else if (value === '-' && guest === "Children") {
-    children = numberChildren.innerHTML--;
-    total--;
-
+    children.innerHTML--;
   }
+
+  total = parseInt(children.textContent) + parseInt(adults.textContent);
   inputGuest.value = "Guests " + total;
+
+
   return total;
+}
+
+const totalGuest = (total = addOrSub()) => {
+  return inputGuest.value = total;
 }
 
 
@@ -241,7 +243,7 @@ function search() {
   }
   let j = 0;
   for (let i = 0; i < json.length; i++) {
-    if (values === json[i].city.toLowerCase() && addOrSub() <= json[i].maxGuests) {
+    if (values === json[i].city.toLowerCase() && totalGuest() <= json[i].maxGuests) {
       imgQuarto = json[i].photo;
       titleLocation = json[i].title
       ratingLocation = json[i].rating;
@@ -276,7 +278,7 @@ function search() {
     </div>
         `
       j++
-    } else if (!values && addOrSub() <= json[i].maxGuests) {
+    } else if (!values && totalGuest() <= json[i].maxGuests) {
       imgQuarto = json[i].photo;
       titleLocation = json[i].title
       ratingLocation = json[i].rating;
@@ -317,8 +319,8 @@ function search() {
 
     }
   }
-  if (addOrSub() > 0) {
-    guest.value = "Guests " + addOrSub();
+  if (totalGuest() > 0) {
+    guest.value = "Guests " + totalGuest();
   }
   event.preventDefault();
   Cont.innerHTML += `<h1>Stays in Finland</h1> <h2>${j}+stays</h2>`;

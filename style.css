@@ -343,5 +343,13 @@ label{
   border-radius: 12px;
   color: #4F4F4F;
   text-transform: uppercase;
+}
 
+@media (max-width: 800px){
+ .filter{
+   width: 80%;
+ }
+ .img-photo{
+   width: 53vh;
+ }
 }
