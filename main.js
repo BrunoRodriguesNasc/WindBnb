@@ -174,6 +174,7 @@ const btnGuest = document.querySelectorAll(".btn-btn-guest")
 var numberAdults = document.querySelector(".number-Adults");
 const numberChildren = document.querySelector(".number-Children")
 const divLugares = document.querySelector(".container-lugares")
+var btnX = document.querySelector(".btn-x");
 let values = "";
 
 
@@ -324,8 +325,12 @@ function search() {
   }
   event.preventDefault();
   Cont.innerHTML += `<h1>Stays in Finland</h1> <h2>${j}+stays</h2>`;
-  filtro.style.top = "-50vh"
+  filtro.style.top = "-100vh"
 }
+
+btnX.addEventListener("click",()=>{
+  filtro.style.top = "-100vh"
+})
 
 
 

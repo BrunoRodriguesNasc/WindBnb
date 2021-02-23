@@ -21,7 +21,11 @@
           <button class="btn"></button>
         </div>
       </header>
+      
       <div class="filtro-ativo">
+        <div class="textFilter">Edit your search
+          <button class="btn-x">X</button>
+        </div>
         <form>
           <div class="input-ativo">
             <input class="Local-Input" id="local-Input" placeholder="Add locations" type="text">
@@ -48,9 +52,9 @@
                 <p>Adults</p>
                 <span class="span-age">Ages 13 or above</span>
                 <div class="btn-guest">
-                  <button class="btn-btn-guest" onclick="addOrSub('+','Adults')">+</button>
-                  <p class="number-Adults">0</p>
                   <button class="btn-btn-guest" onclick="addOrSub('-','Adults')">-</button>
+                  <p class="number-Adults">0</p>
+                  <button class="btn-btn-guest" onclick="addOrSub('+','Adults')">+</button>
                 </div>
               </div>
             </div>
@@ -59,14 +63,17 @@
                 <p>Children</p>
                 <span class="span-age"> Ages 2-12</span>
                 <div class="btn-guest">
-                  <button class="btn-btn-guest"onclick="addOrSub('+','Children')" >+</button>
+                  <button class="btn-btn-guest"onclick="addOrSub('-','Children')">-</button>
                   <p class="number-Children" value="0">0</p>
-                  <button class="btn-btn-guest"onclick="addOrSub('-','Children')"  >-</button>
+                  <button class="btn-btn-guest"onclick="addOrSub('+','Children')">+</button>
                 </div>
               </div>
             </div>
           </div>
         </div>
+        <div class="input-mobile">
+        <button class="btn-input-mobile" onclick="search()">Search</button>
+      </div>
       </div>
       <div class="info">
       </div>
