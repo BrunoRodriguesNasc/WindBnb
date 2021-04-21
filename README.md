@@ -1,4 +1,4 @@
-## Worked Hours
+## WindBnb
  
 
 A mini replica of airbnb, simple and made to perfect my skills
