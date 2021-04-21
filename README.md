@@ -1,6 +1,39 @@
-# WindBnb
-Esse projeto foi inspirado num Desafio que foi proposto pelo site DevChallenger , nele eu recriei a interface um site no estilo AirBnb.
+## Worked Hours
+ 
+An application to measure the hours worked.
+## Technology 
+ 
+* JavaScript
+* CSS3
+* HTML
 
-Ele foi criado com Javascript puro, CSS e HTML
+## Services Used
+ 
+* Github
 
-Link --> https://nifty-tereshkova-5d8a26.netlify.app
+
+## Getting started
+ 
+* To install:
+>    $ Git clone git@github.com:bruno-ctrl/WindBnb.git
+>    ou acesse 
+>    https://nifty-tereshkova-5d8a26.netlify.app
+
+## How to use
+ 
+Abra a pasta do arquivo e execute o index.html
+
+ 
+## Versioning
+ 
+1.0.0.0
+ 
+ 
+## Authors
+ 
+* **Bruno Rodrigues**: @bruno-ctrl (https://github.com/bruno-ctrl/)
+ 
+Please follow github and join us!
+Thanks to visiting me and good coding!
+
+
