@@ -16,8 +16,9 @@ An application to measure the hours worked.
  
 * To install:
 >    $ Git clone git@github.com:bruno-ctrl/WindBnb.git
->        ou acesse 
->    https://nifty-tereshkova-5d8a26.netlify.app
+>    
+* Link 
+ https://nifty-tereshkova-5d8a26.netlify.app
 
 ## How to use
  
