@@ -1,6 +1,8 @@
 ## Worked Hours
  
-An application to measure the hours worked.
+
+A mini replica of airbnb, simple and made to perfect my skills
+
 ## Technology 
  
 * JavaScript
